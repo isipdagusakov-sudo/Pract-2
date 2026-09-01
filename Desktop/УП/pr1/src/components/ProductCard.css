@@ -55,3 +55,19 @@
   font-size: 14px;
   color: #555555;
 }
+
+/* Кнопка уменьшения количества — второстепенная, поэтому красная */
+.product-card__button--remove {
+  background: #ef4444;
+}
+
+.product-card__button--remove:hover {
+  background: #dc2626;
+}
+
+/* Заблокированная кнопка: когда товара в корзине ещё нет */
+.product-card__button:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}

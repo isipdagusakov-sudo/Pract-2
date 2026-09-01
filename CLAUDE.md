@@ -26,8 +26,9 @@ There is no test suite configured in this project.
 
 ## Architecture
 
-`pr1` is currently the unmodified output of `npm create vite@latest -- --template react`:
+`pr1` is a small product-catalog demo built on the Vite/React starter:
 - `src/main.jsx` mounts `<App />` from `src/App.jsx` into `#root` (see `index.html`).
-- `src/App.jsx` is the single-component app (the default Vite/React starter counter + links section).
-- Static assets referenced by `App.jsx` live in `src/assets/`; files served as-is (e.g. `icons.svg`, `favicon.svg`) live in `public/`.
-- No router, state library, or backend is wired in yet — this is a bare scaffold awaiting actual coursework.
+- `src/App.jsx` owns the product data as a local array (`products`, hardcoded id/name/price/image) and renders one `ProductCard` per item, passing fields down as props.
+- `src/components/ProductCard.jsx` renders a single product and owns its own `useState` cart-quantity counter — the count is local to each card, not lifted to `App`.
+- Component-scoped styles live next to their component (`App.css`, `src/components/ProductCard.css`); `index.css` holds global styles.
+- No router, global state library, or backend — product data is static in-source and there is no cart total/shared cart state across cards.

@@ -1,0 +1,8 @@
+# Служебные файлы редакторов
+.vscode/
+.idea/
+
+# Служебные файлы ОС
+Thumbs.db
+desktop.ini
+.DS_Store

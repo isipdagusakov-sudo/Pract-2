@@ -12,7 +12,12 @@ function ProductCard({ name, price, image }) {
   // Обработчик нажатия на кнопку «Добавить в корзину»:
   // увеличиваем количество на 1
   const handleAdd = () => {
-    setCount(count + 1)
+    setCount((prev) => prev + 1)
+  }
+
+  // Уменьшаем количество на 1, но не даём уйти ниже нуля
+  const handleRemove = () => {
+    setCount((prev) => Math.max(0, prev - 1))
   }
 
   return (
@@ -25,6 +30,16 @@ function ProductCard({ name, price, image }) {
 
       <button className="product-card__button" onClick={handleAdd}>
         Добавить в корзину
+      </button>
+
+      {/* Кнопка уменьшения количества.
+          Пока товара нет в корзине — она заблокирована */}
+      <button
+        className="product-card__button product-card__button--remove"
+        onClick={handleRemove}
+        disabled={count === 0}
+      >
+        Убрать из корзины
       </button>
 
       {/* Текущее количество выбранного товара */}
