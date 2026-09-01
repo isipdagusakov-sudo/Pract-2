@@ -1,0 +1,9 @@
+# This repo is rooted at the Windows user profile directory.
+# Ignore everything by default, then explicitly allow the actual project.
+/*
+!/README.md
+!/CLAUDE.md
+!/.gitignore
+!/Desktop/
+/Desktop/*
+!/Desktop/УП/
